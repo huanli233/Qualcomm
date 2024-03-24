@@ -64,6 +64,14 @@ public abstract class Base {
 	}
 	
 	/**
+	 * 获取可执行文件的File对象
+	 * @return 可执行文件File对象
+	 */
+	protected File getBinFile() {
+		return new File(tempDir, getBinFileName());
+	}
+	
+	/**
 	 * 获取可执行文件名称(包含后缀)
 	 * @return 可执行文件名称
 	 */
