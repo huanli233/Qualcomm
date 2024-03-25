@@ -5,6 +5,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 
 public class FileUtil {
 	
@@ -22,6 +24,21 @@ public class FileUtil {
             }
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+	
+	/**
+	 * 移动文件
+	 * @param sourceFile 源文件
+	 * @param destinationFile 目标文件
+	 */
+	public static Throwable moveFile(File sourceFile, File destinationFile) {
+
+        try {
+            Files.move(sourceFile.toPath(), destinationFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            return null;
+        } catch (IOException e) {
+            return e;
         }
     }
 	
