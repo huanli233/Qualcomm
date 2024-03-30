@@ -1,4 +1,4 @@
-package com.huanli233.qualcomm.emmcdl.bean;
+package com.huanli233.qualcomm.bean;
 
 public class Partition {
 	String name;

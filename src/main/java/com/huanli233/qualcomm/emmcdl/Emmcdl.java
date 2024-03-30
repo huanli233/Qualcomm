@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.huanli233.qualcomm.base.Base;
 import com.huanli233.qualcomm.bean.BaseResult;
-import com.huanli233.qualcomm.emmcdl.bean.GPT;
+import com.huanli233.qualcomm.bean.GPT;
 import com.huanli233.qualcomm.emmcdl.parser.DeviceParser;
 import com.huanli233.qualcomm.emmcdl.parser.PartitionParser;
 import com.huanli233.qualcomm.exception.InitializationFailedException;
@@ -73,7 +73,9 @@ public class Emmcdl extends Base {
 		for (int i = 0; i < args.length; i++) {
 			cmd[i + mArgs.length] = args[i];
 		}
-		return super.execCmd(cmd);
+		ExecResult result = super.execCmd(cmd);
+		logger.info(result.getOutput());
+		return result;
 	}
 
 	@Override

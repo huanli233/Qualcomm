@@ -7,9 +7,9 @@ import java.util.Map;
 import org.junit.Test;
 
 import com.huanli233.qualcomm.bean.BaseResult;
+import com.huanli233.qualcomm.bean.GPT;
+import com.huanli233.qualcomm.bean.Partition;
 import com.huanli233.qualcomm.emmcdl.Emmcdl;
-import com.huanli233.qualcomm.emmcdl.bean.GPT;
-import com.huanli233.qualcomm.emmcdl.bean.Partition;
 
 public class EmmcdlTest {
 	@Test

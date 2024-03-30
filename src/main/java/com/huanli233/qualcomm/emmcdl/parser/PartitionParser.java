@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.huanli233.qualcomm.emmcdl.bean.Partition;
+import com.huanli233.qualcomm.bean.Partition;
 
 public class PartitionParser {
     
