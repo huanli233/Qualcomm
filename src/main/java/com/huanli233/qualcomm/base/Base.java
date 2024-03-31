@@ -55,12 +55,20 @@ public abstract class Base {
 	 * @return 命令结果
 	 */
 	protected ExecResult execCmd(String... args) {
+		return execCmd(tempDir.getAbsoluteFile(), args);
+	}
+	
+	/**
+	 * 执行可执行文件命令
+	 * @return 命令结果
+	 */
+	protected ExecResult execCmd(File path, String... args) {
 		String[] cmd = new String[args.length + 1];
 		cmd[0] = getBinFileName();
 		for (int i = 0; i < args.length; i++) {
 			cmd[i + 1] = args[i];
 		}
-		return CmdUtil.runExecutable(tempDir.getAbsoluteFile(), cmd);
+		return CmdUtil.runExecutable(path.getAbsoluteFile(), cmd);
 	}
 	
 	/**

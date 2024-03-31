@@ -14,6 +14,7 @@ public class QSaharaServer extends Base {
 
 	public QSaharaServer(File tempDir) throws InitializationFailedException {
 		super(tempDir);
+		this.binFile = new File(tempDir, "QSaharaServer.exe");
 	}
 	
 	public boolean setBinFile(File binFile) {
@@ -22,6 +23,11 @@ public class QSaharaServer extends Base {
 		}
 		this.binFile = binFile;
 		return true;
+	}
+	
+	@Override
+	public ExecResult execCmd(String... args) {
+		return super.execCmd(binFile.getParentFile().getAbsoluteFile(), args);
 	}
 
 	@Override
